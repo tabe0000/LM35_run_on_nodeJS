@@ -24,7 +24,7 @@ var save_csv_span = 5;  //ファイル保存のスパン[s]
 
 
 
-
+//Arduinoボードを定義、セットアップ
 board.on("ready", () => {
   const thermometer = new five.Thermometer({
     controller: "LM35",
@@ -32,21 +32,21 @@ board.on("ready", () => {
   });
 
   setInterval(getThermoData, get_temp_span * 1000, thermometer);
-
 });
 
+//データを取得する
 function getThermoData(thermometer) {
-  DD = new Date();
-  Hours = DD.getHours();
-  Minutes = DD.getMinutes();
-  Seconds = DD.getSeconds();
+  date = new Date();
+  hours = date.getHours();
+  minutes = date.getMinutes();
+  seconds = date.getSeconds();
 
   const {celsius} = thermometer;
 
-  var one_line = [Hours + ":" + Minutes + ":" + Seconds, celsius];
+  var one_line = [hours + ":" + minutes + ":" + seconds, celsius];
   csv_data.push(one_line);
   console.log(csv_data);
-  delete DD;
+  delete Date;
   if(cnt>save_csv_span) {
     cnt=0;
     exportCSV(csv_data);
@@ -56,7 +56,7 @@ function getThermoData(thermometer) {
   cnt++;
 }
 
-
+//データをCSVとしてエクスポート
 function exportCSV(content){
   for (var i = 0; i < content.length; i++) {
       var value = content[i];
