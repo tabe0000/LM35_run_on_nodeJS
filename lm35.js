@@ -7,7 +7,7 @@ var fs = require('fs');
 
 //ArduinoIDEなどを使って調べた、Arduinoが接続されているCOMポートを指定
 var board = new five.Board({
-    port: "COM6"
+    port: "COM7"
 });
 var csv_data = [
   ['time', 'temp']
