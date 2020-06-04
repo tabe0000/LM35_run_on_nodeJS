@@ -1,0 +1,26 @@
+{
+  "name": "lm35",
+  "version": "1.0.0",
+  "description": "## 機能 LM35を用いて温度計測が可能   取得した温度は```temp_x.csv```の形式で出力 ```csv time, temp 14:00:00, 34 14:00:01, 33 ``` ## 使用機器 - Arduino - LM35 - PC(OS問わず) - Node.js - npm",
+  "main": "lm35.js",
+  "dependencies": {
+    "barcli": "^0.0.25",
+    "io": "^1.0.1",
+    "keypress": "^0.2.1",
+    "johnny-five": "^1.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tabe0000/LM35_run_on_nodeJS.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tabe0000/LM35_run_on_nodeJS/issues"
+  },
+  "homepage": "https://github.com/tabe0000/LM35_run_on_nodeJS#readme"
+}
